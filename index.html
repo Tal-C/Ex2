@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+<head>
+    <meta charset="UTF-8">
+    <title>Tal's Accessories Website</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/acs.css"/>
+    <!--<link rel="stylesheet" href="css/acs.css"/>-->
+</head>
+<body>
+
+<header id="logo">
+    <h1 class="title">Tal's Accessories</h1>
+</header>
+
+<nav id="mainNav">
+    <a href="#/bags"><img src="images/bag.jpg" class="indexIMG"/></a>
+    <a href="#/necklaces"><img src="images/necklace.jpg" class="indexIMG"/></a>
+    <a href="#/sunglasses"><img src="images/sunglasses.jpg" class="indexIMG"/></a>
+</nav>
+
+<div ng-view>
+    <!--Here comes the page-->
+</div>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>

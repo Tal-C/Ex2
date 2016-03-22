@@ -1,0 +1,39 @@
+<div>
+    <center class="title">Our Sunglasses:</center>
+    <center>
+        <div ng-repeat="product in acs.sunglasses" ng-controller="tabController as tabi">
+            <ul>
+                <h3 class="name">{{product.name}}</h3>
+                <img ng-src="{{product.image}}" class="acsIMG"/>
+                <li ng-class="{active: tabi.isTabSelected(1)}"><a href ng-click="tabi.selectTab(1)"> Description</a></li>
+                <li ng-class="{active: tabi.isTabSelected(2)}"><a href ng-click="tabi.selectTab(2)"> Type</a></li>
+                <li ng-class="{active: tabi.isTabSelected(3)}"><a href ng-click="tabi.selectTab(3)"> Price</a></li>
+                <li ng-class="{active: tabi.isTabSelected(4)}"><a href ng-click="tabi.selectTab(4)"> Amount</a></li>
+            </ul>
+
+            <div class="panel" ng-show="tabi.isTabSelected(1)">
+                <div class="titleTab">Description</div>
+                <blockquote>{{product.description}}</blockquote>
+            </div>
+
+            <div class="panel" ng-show="tabi.isTabSelected(2)">
+                <div class="titleTab">Type</div>
+                <blockquote>{{product.type}}</blockquote>
+            </div>
+            <div class="panel" ng-show="tabi.isTabSelected(3)">
+                <div class="titleTab">Price</div>
+                <blockquote>{{product.price | currency}}</blockquote>
+            </div>
+            <div class="panel" ng-show="tabi.isTabSelected(4)">
+                <div class="titleTab">Amount</div>
+                <blockquote>{{product.amount}} remain</blockquote>
+            </div>
+            <button ng-show="product.canPurchase" class="addToCart">Add To Cart</button>
+
+            <p/>
+            <hr/>
+
+
+        </div>
+    </center>
+</div>
